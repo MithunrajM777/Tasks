@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Namakkal')">Namakkal</button>
+    <button class="tablinks" onclick="openCity(event, 'Erode')">Erode</button>
+    <button class="tablinks" onclick="openCity(event, 'Salem')">Salem</button>
+    <button class="tablinks" onclick="openCity(event, 'Coimbatore')">Coimbatore</button>
+    <button class="tablinks" onclick="openCity(event, 'Chennai')">Chennai</button>
+    <button class="tablinks" onclick="openCity(event, 'Karur')">Karur</button>
+</div>
+<div id="Namakkal" class="tabcontent">
+  <h3>Namakkal</h3>
+  <p>Namakkal is a city in the Indian state of Tamil Nadu.</p>
+</div>
+<div id="Erode" class="tabcontent">
+  <h3>Erode</h3>
+  <p>Erode is a city in the Indian state of Tamil Nadu.</p>
+</div>
+<div id="Salem" class="tabcontent">
+  <h3>Salem</h3>
+  <p>Salem is a city in the Indian state of Tamil Nadu.</p>
+</div>
+<div id="Coimbatore" class="tabcontent">
+  <h3>Coimbatore</h3>
+  <p>Coimbatore is a city in the Indian state of Tamil Nadu.</p>
+</div>
+<div id="Chennai" class="tabcontent">
+  <h3>Chennai</h3>
+  <p>Chennai is a city in the Indian state of Tamil Nadu.</p>
+</div>
+<div id="Karur" class="tabcontent">
+  <h3>Karur</h3>
+  <p>Karur is a city in the Indian state of Tamil Nadu.</p>
+</div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";  
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";  
+  evt.currentTarget.className += " active";
+}
+</script>
+
+   
+</body>
+</html> 
