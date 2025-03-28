@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #f0f0f0;
+  color: #e41d1d;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #9b9191;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: rgb(219, 212, 212);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+<h2>MMR TRANSPORTS</h2>
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>MMR Transports is a trusted logistics and transportation company committed to delivering goods safely and efficiently across various locations..</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>With a strong focus on reliability and customer satisfaction, the company provides tailored transport solutions for different industries.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Equipped with a well-maintained fleet and experienced drivers, MMR Transports ensures timely deliveries while maintaining high safety standards.</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
